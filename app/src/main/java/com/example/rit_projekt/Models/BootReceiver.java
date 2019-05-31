@@ -1,4 +1,4 @@
-package com.example.rit_projekt;
+package com.example.rit_projekt.Models;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.example.rit_projekt;
+package com.example.rit_projekt.Models;
 
 
 import android.content.ContentValues;
@@ -14,16 +14,16 @@ import java.util.ArrayList;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "projekt.db";
-    public static final String TABLE_NAME = "artikel";
+    private static final String DATABASE_NAME = "projekt.db";
+    private static final String TABLE_NAME = "artikel";
     public static final String ARTIKELID = "ID";
-    public static final String ARTIKELIME = "imeArtikla";
-    public static final String ENERGIJSKEV = "energijskaV";
-    public static final String MASCOBE = "mascobe";
-    public static final String NASICENEMASCOBE = "nasiceneM";
+    private static final String ARTIKELIME = "imeArtikla";
+    private static final String ENERGIJSKEV = "energijskaV";
+    private static final String MASCOBE = "mascobe";
+    private static final String NASICENEMASCOBE = "nasiceneM";
     private static final String OGLJIKOVIHIDRATI = "ogljikoviH";
-    public static final String SLADKORJI = "sladkor";
-    public static final String BELJAKOVINE = "beljakovine";
+    private static final String SLADKORJI = "sladkor";
+    private static final String BELJAKOVINE = "beljakovine";
     private static final int schemaVersion = 5;
 
 

@@ -1,7 +1,5 @@
-package com.example.rit_projekt;
+package com.example.rit_projekt.Activities;
 
-import android.content.Intent;
-import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,14 +7,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.rit_projekt.Models.DatabaseHelper;
+import com.example.rit_projekt.R;
 
 import java.io.File;
 import java.util.ArrayList;
 
 
-public class insertBaza extends AppCompatActivity implements View.OnClickListener {
+public class insertBazaActivity extends AppCompatActivity implements View.OnClickListener {
 
     DatabaseHelper myDB;
     EditText ime;
@@ -69,9 +69,9 @@ public class insertBaza extends AppCompatActivity implements View.OnClickListene
                         finish();
 
                         if (isInserted) {
-                            Toast.makeText(insertBaza.this, "Data inserted", Toast.LENGTH_LONG).show();
+                            Toast.makeText(insertBazaActivity.this, "Data inserted", Toast.LENGTH_LONG).show();
                         } else {
-                            Toast.makeText(insertBaza.this, "Data NOT inserted", Toast.LENGTH_LONG).show();
+                            Toast.makeText(insertBazaActivity.this, "Data NOT inserted", Toast.LENGTH_LONG).show();
                         }
                     }
                 }
