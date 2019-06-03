@@ -23,6 +23,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     EditText etEmail,etPassword;
     TextView tvRegister;
     Button btnLogin;
+    int tmp = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             etPassword.requestFocus();
             return;
         }
-        if(password.length() < 6){
+        if(password.length() < 6) {
             etPassword.setText("PASSWORD MUST BE ATLEAST 6 CHAR LONG");
             etPassword.requestFocus();
             return;
@@ -67,20 +68,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Call<LoginResponse> call = RetrofitClient
                 .getInstance().getApi().userLogin(email,password);
 
+
+
         call.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 LoginResponse loginResponse = response.body();
 
                 if(!loginResponse.isError()){
-
+                    tmp = 1;
                     Toast.makeText(LoginActivity.this,loginResponse.getMessage(),Toast.LENGTH_LONG).show();
+
                 }else{
-
+                    tmp = 0;
                     Toast.makeText(LoginActivity.this,loginResponse.getMessage(),Toast.LENGTH_LONG).show();
-
                 }
-
             }
 
             @Override
@@ -88,7 +90,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             }
         });
-        startActivity(new Intent(this,MainActivity.class));
+
+        if(tmp == 1){
+            startActivity(new Intent(this,MainActivity.class));
+        }else{
+            startActivity(new Intent(this,MainActivity.class)); // ZBRIS
+        }
+
     }
 
 
@@ -97,7 +105,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch(v.getId()){
             case R.id.btnPrijava:
                 userLogin();
-
                 break;
             case R.id.tvRegis:
                 Intent i = new Intent(this,RegisterActivity.class);

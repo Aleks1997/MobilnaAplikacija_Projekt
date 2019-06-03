@@ -12,6 +12,8 @@ import android.widget.ArrayAdapter;
 
 import java.util.ArrayList;
 
+import retrofit2.http.FormUrlEncoded;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "projekt.db";
@@ -48,7 +50,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean insertData(String ime,String enerV,String masc,String nasicM,String ogljH,String slad,String belj){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        //contentValues.put(ARTIKELID,uuid)
         contentValues.put(ARTIKELIME,ime);
         contentValues.put(ENERGIJSKEV,enerV);
         contentValues.put(MASCOBE,masc);
@@ -57,6 +58,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(SLADKORJI,slad);
         contentValues.put(BELJAKOVINE,belj);
         long result = db.insert(TABLE_NAME,null,contentValues);
+
 
         if(result == -1){
             return false;
@@ -97,7 +99,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             if(c.getCount() > 0){
                 c.moveToNext();
 
-                //list.add(c.getString(1));
                 list.add(c.getString(2));
                 list.add(c.getString(3));
                 list.add(c.getString(4));
@@ -105,7 +106,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 list.add(c.getString(6));
                 list.add(c.getString(7));
 
-                //1 IME,2 eneVrednost,...
 
                 for(int i = 0; i < list.size();i++){
                     Log.d("a",list.get(i));
@@ -120,6 +120,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
         return list;
+    }
+
+    public boolean updateData(String ime,String enerV,String masc,String nasicM,String ogljH,String slad,String belj) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ARTIKELIME,ime);
+        contentValues.put(ENERGIJSKEV,enerV);
+        contentValues.put(MASCOBE,masc);
+        contentValues.put(NASICENEMASCOBE,nasicM);
+        contentValues.put(OGLJIKOVIHIDRATI,ogljH);
+        contentValues.put(SLADKORJI,slad);
+        contentValues.put(BELJAKOVINE,belj);
+        //Log.d("e","imeArtikla="+ime);
+        db.update(TABLE_NAME,contentValues,"imeArtikla=?",new String[] {ime});
+        return true;
+
+    }
+
+    public boolean deleteData(String ime){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME,"imeArtikla=?",new String[] {ime});
+        return true;
     }
 
 

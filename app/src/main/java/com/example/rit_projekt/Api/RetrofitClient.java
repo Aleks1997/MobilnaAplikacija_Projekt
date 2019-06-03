@@ -5,6 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     private static final String BASE_URL = "http://192.168.43.104/MyApi/public/";
+    //POVEZ TELEFON - RACUNALNIK --- cmd -> ipconfig
     private static RetrofitClient mInstance;
     private Retrofit retrofit;
 

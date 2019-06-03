@@ -7,7 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
+
 
 import com.example.rit_projekt.Models.DatabaseHelper;
 import com.example.rit_projekt.R;
@@ -68,11 +68,6 @@ public class insertBazaActivity extends AppCompatActivity implements View.OnClic
 
                         finish();
 
-                        if (isInserted) {
-                            Toast.makeText(insertBazaActivity.this, "Data inserted", Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(insertBazaActivity.this, "Data NOT inserted", Toast.LENGTH_LONG).show();
-                        }
                     }
                 }
         );
