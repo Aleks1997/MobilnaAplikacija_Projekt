@@ -148,11 +148,11 @@
         android:layout_width="300sp"
         android:layout_height="40sp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -167,9 +167,9 @@
         android:text="Zbrisi"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/belj"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintVertical_bias="0.22" />
 
 </android.support.constraint.ConstraintLayout>

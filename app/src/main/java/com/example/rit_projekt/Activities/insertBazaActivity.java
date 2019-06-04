@@ -1,5 +1,6 @@
 package com.example.rit_projekt.Activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +27,7 @@ public class insertBazaActivity extends AppCompatActivity implements View.OnClic
     EditText hidrati;
     EditText sladkor;
     EditText beljakovine;
-    Button vstavi, nazaj;
+    Button vstavi, nazaj,btnTEXT;
     ArrayList<String> listItem;
     ArrayAdapter adapter;
 
@@ -49,6 +50,8 @@ public class insertBazaActivity extends AppCompatActivity implements View.OnClic
         vstavi = findViewById(R.id.btnVstavi);
         nazaj = findViewById(R.id.btnNazaj);
         nazaj.setOnClickListener(this);
+        btnTEXT=findViewById(R.id.btnOCR);
+        btnTEXT.setOnClickListener(this);
 
         myDB = new DatabaseHelper(this);
 
@@ -78,6 +81,9 @@ public class insertBazaActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
             case R.id.btnNazaj:
                 finish();
+                break;
+            case R.id.btnOCR:
+                startActivity(new Intent(this, OcrCaptureActivity.class));
                 break;
         }
     }

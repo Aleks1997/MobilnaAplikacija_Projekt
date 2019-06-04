@@ -27,27 +27,33 @@
         android:id="@+id/btnVstaviNewActivity"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="15dp"
         android:text="Vstavi v bazo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSpremeniBazo"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
         android:text="Spremeni artikel"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnVstaviNewActivity" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="100sp"
         android:layout_height="40sp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
         android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +68,7 @@
         android:layout_marginEnd="8dp"
         android:background="@color/white"
         android:ems="10"
-        android:hint="teza"
+        android:hint="teza v gramih"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/spinner"
@@ -194,13 +200,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="470dp" />
+        app:layout_constraintGuide_begin="365dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="352dp" />
+        app:layout_constraintGuide_begin="270dp" />
 
 </android.support.constraint.ConstraintLayout>
