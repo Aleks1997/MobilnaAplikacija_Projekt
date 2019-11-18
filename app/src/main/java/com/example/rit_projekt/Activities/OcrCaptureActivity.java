@@ -227,7 +227,7 @@ public class OcrCaptureActivity extends AppCompatActivity implements View.OnClic
                 TextRecognizer recognizer = new TextRecognizer.Builder(getApplicationContext()).build();
 
                 if (!recognizer.isOperational()) {
-                    Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Napaka pri text recognition", Toast.LENGTH_SHORT).show();
                 } else {
                     Frame frame = new Frame.Builder().setBitmap(bitmap).build();
                     SparseArray<TextBlock> items = recognizer.detect(frame);

@@ -21,11 +21,11 @@ public class RetrofitClient {
             mInstance = new RetrofitClient();
         }
         return mInstance;
-    }
+                }
 
-    public Api getApi(){
+public Api getApi(){
         return retrofit.create(Api.class);
-    }
+        }
 
 
 }

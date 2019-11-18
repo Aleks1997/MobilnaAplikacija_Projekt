@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Toast.makeText(LoginActivity.this,loginResponse.getMessage(),Toast.LENGTH_LONG).show();
 
                 }else{
-                    tmp = 0;
+                    tmp = 1;//nastavi 0
                     Toast.makeText(LoginActivity.this,loginResponse.getMessage(),Toast.LENGTH_LONG).show();
                 }
             }
@@ -93,10 +93,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         if(tmp == 1){
             startActivity(new Intent(this,MainActivity.class));
-        }else{
-            startActivity(new Intent(this,MainActivity.class)); // ZBRIS
         }
-
     }
 
 
